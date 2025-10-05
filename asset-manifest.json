@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/loding-education-web/static/css/main.4d2fce02.css",
+    "main.js": "/loding-education-web/static/js/main.ea13ee58.js",
+    "index.html": "/loding-education-web/index.html",
+    "main.4d2fce02.css.map": "/loding-education-web/static/css/main.4d2fce02.css.map",
+    "main.ea13ee58.js.map": "/loding-education-web/static/js/main.ea13ee58.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4d2fce02.css",
+    "static/js/main.ea13ee58.js"
+  ]
+}
