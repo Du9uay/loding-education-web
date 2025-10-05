@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useAnimation, useInView, useScroll, useTransform } from 'framer-motion';
 import { Users, Award, Target, Network, Camera, Film, Edit3, TrendingUp, Lightbulb, ChevronRight, Building2, Briefcase, Trophy, Sparkles, CheckCircle, Calculator, Eye, N8N } from '../components/Icons';
+import DigitalAvatarPlayer from '../components/DigitalAvatarPlayer';
 
 const HomePage: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
@@ -83,7 +84,7 @@ const HomePage: React.FC = () => {
   }, [controls, isInView]);
 
   return (
-    <div className="min-h-screen py-12 px-4 overflow-hidden">
+    <div className="min-h-screen py-12 px-4">
       <div className="max-w-6xl mx-auto">
         {/* 主标题区域 - 带动画 */}
         <motion.div 
@@ -146,7 +147,7 @@ const HomePage: React.FC = () => {
 
         {/* 新增大标题：为什么要学习这节课 */}
         <motion.section
-          className="mb-16 text-center"
+          className="mb-16 text-center relative"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -177,11 +178,17 @@ const HomePage: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.6 }}
           />
+
+          {/* 数字人播放器1 - 为什么要学习这节课标题 */}
+          <DigitalAvatarPlayer
+            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIP0m8sOUa.mov"
+            position={{ top: 0, right: '-16rem' }}
+          />
         </motion.section>
 
         {/* 第一部分：为什么要关注行业 */}
         <motion.section
-          className="mb-20"
+          className="mb-20 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -360,6 +367,12 @@ const HomePage: React.FC = () => {
               </motion.div>
             </div>
           </motion.div>
+
+          {/* 数字人播放器2 - 为什么要关注行业 */}
+          <DigitalAvatarPlayer
+            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIP0m8mekF.mov"
+            position={{ top: 380, right: '-16rem' }}
+          />
         </motion.section>
 
         {/* 第二部分：为什么要分清企业类型 */}
@@ -367,7 +380,7 @@ const HomePage: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mb-20"
+          className="mb-20 relative"
         >
           {/* 章节标题 */}
           <motion.div
@@ -600,11 +613,17 @@ const HomePage: React.FC = () => {
               不同的企业类型对应不同的技术需求，掌握清晰的行业定位，能够帮助你快速找到适合自己的职业方向，进入合适的企业，获得更快的职业发展
             </p>
           </motion.div>
+
+          {/* 数字人播放器3 - 为什么要分清企业类型 */}
+          <DigitalAvatarPlayer
+            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIP0m8xrCP.mov"
+            position={{ top: 200, right: '-16rem' }}
+          />
         </motion.section>
 
         {/* 第三部分：关于岗位你该知道的是 */}
         <motion.section
-          className="mb-20"
+          className="mb-20 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -826,7 +845,7 @@ const HomePage: React.FC = () => {
 
         {/* 第四部分：通过学习，你能学到什么 */}
         <motion.section
-          className="mb-20"
+          className="mb-20 relative"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -1065,6 +1084,18 @@ const HomePage: React.FC = () => {
               </div>
             </motion.div>
           </div>
+
+          {/* 数字人播放器4 - 通过学习，你能学到什么 - 右侧上方 */}
+          <DigitalAvatarPlayer
+            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIP0m8FIsw.mov"
+            position={{ top: 300, right: '-16rem' }}
+          />
+
+          {/* 数字人播放器5 - 通过学习，你能学到什么 - 右侧下方 */}
+          <DigitalAvatarPlayer
+            videoUrl="https://ddcz-1315997005.cos.ap-nanjing.myqcloud.com/static/video/web_teach/recuYIP0m896Uq.mov"
+            position={{ top: 900, right: '-16rem' }}
+          />
         </motion.section>
 
         {/* 第五部分：岗位晋升路径 */}
