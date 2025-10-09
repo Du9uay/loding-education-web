@@ -35,19 +35,19 @@ const Navigation: React.FC = () => {
   return (
     <>
     <nav className="fixed top-0 left-0 right-0 z-50 nav-glass">
+      {/* Trial Experience Button - 绝对定位在页面最左侧 */}
+      <button
+        onClick={() => setIsTrialModalOpen(true)}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-xl font-medium text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/30 z-10"
+      >
+        <Play className="w-4 h-4" />
+        <span>直播回放</span>
+      </button>
+
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Trial Experience Button - 导航栏最左侧，独立容器 */}
-          <button
-            onClick={() => setIsTrialModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-xl font-medium text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/30"
-          >
-            <Play className="w-4 h-4" />
-            <span>直播回放</span>
-          </button>
-
-          {/* Logo - 独立容器 */}
-          <Link to="/" className="flex items-center space-x-3 absolute left-1/2 transform -translate-x-1/2">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-[color:var(--accent-logistics-500)] rounded-lg flex items-center justify-center">
               <Cpu className="w-6 h-6 text-white" />
             </div>

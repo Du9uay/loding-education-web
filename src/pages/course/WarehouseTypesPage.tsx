@@ -681,19 +681,19 @@ const WarehouseTypesPage: React.FC = () => {
 
         {/* 页面导航 */}
         <div className="flex justify-between items-center mt-12">
-          <Link 
+          <Link
             to="/course/hardware-equipment"
             className="btn-glass flex items-center group"
           >
             <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
             智慧仓储硬件设备组成
           </Link>
-          
-          <Link 
-            to="/course-summary" 
+
+          <Link
+            to="/course-test"
             className="btn-primary flex items-center group"
           >
-            课程总结
+            课堂测试
             <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
