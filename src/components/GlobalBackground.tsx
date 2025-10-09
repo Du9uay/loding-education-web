@@ -1,63 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-// 星点组件 - 实现消失后随机重生
-const Star: React.FC<{ index: number }> = ({ index }) => {
-  const [position, setPosition] = useState({
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 4 + 2, // 增大尺寸范围 2-6px
-  });
-  const [isVisible, setIsVisible] = useState(true);
-
-  // 生成新的随机位置
-  const regenerate = () => {
-    setIsVisible(false);
-    setTimeout(() => {
-      setPosition({
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        size: Math.random() * 4 + 2, // 增大尺寸范围 2-6px
-      });
-      setIsVisible(true);
-    }, 500);
-  };
-
-  useEffect(() => {
-    // 随机生命周期（5-15秒）
-    const lifetime = (Math.random() * 10 + 5) * 1000;
-    const interval = setInterval(regenerate, lifetime);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          className="absolute bg-[#3182CE]"
-          style={{
-            width: `${position.size}px`,
-            height: `${position.size}px`,
-            borderRadius: '50%',
-            left: `${position.x}%`,
-            top: `${position.y}%`,
-            boxShadow: `0 0 ${position.size * 3}px rgba(49, 130, 206, 0.9), 0 0 ${position.size * 6}px rgba(49, 130, 206, 0.4)`,
-          }}
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ 
-            opacity: [0, 1, 1, 0],
-            scale: [0, 1, 1.2, 0]
-          }}
-          transition={{
-            duration: Math.random() * 3 + 2,
-            times: [0, 0.2, 0.8, 1],
-            ease: "easeInOut"
-          }}
-        />
-      )}
-    </AnimatePresence>
-  );
-};
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const GlobalBackground: React.FC = () => {
   return (
@@ -170,15 +112,6 @@ const GlobalBackground: React.FC = () => {
           repeatType: "reverse"
         }}
       />
-
-      {/* 星点效果 - 圆形，灭掉后随机重生 */}
-      <div className="absolute inset-0">
-        {Array.from({ length: 60 }, (_, i) => (
-          <Star key={i} index={i} />
-        ))}
-      </div>
-
-
 
       {/* 减少动效样式 */}
       <style>{`
