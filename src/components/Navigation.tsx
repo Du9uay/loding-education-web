@@ -37,9 +37,8 @@ const Navigation: React.FC = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 nav-glass">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Trial Button and Logo */}
           <div className="flex items-center space-x-4">
-            {/* Trial Experience Button */}
+            {/* Trial Experience Button - 最左侧 */}
             <button
               onClick={() => setIsTrialModalOpen(true)}
               className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-xl font-medium text-sm transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/30"
